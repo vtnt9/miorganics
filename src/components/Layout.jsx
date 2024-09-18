@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { navItems } from '../nav-items';
-import { Menu } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,19 +12,25 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-blue-600 text-white">
+      <header className="bg-blue-600 text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <Link to="/" className="text-2xl font-bold">MiOrganics</Link>
             <div className="md:hidden">
-              <button onClick={toggleMenu} className="focus:outline-none">
-                <Menu className="h-6 w-6" />
+              <button onClick={toggleMenu} className="focus:outline-none" aria-label="Toggle menu">
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
-            <ul className={`md:flex md:space-x-4 ${isMenuOpen ? 'block' : 'hidden'} absolute md:relative top-16 md:top-0 left-0 right-0 bg-blue-600 md:bg-transparent p-4 md:p-0 z-50`}>
+            <ul className={`md:flex md:space-x-4 ${isMenuOpen ? 'block' : 'hidden'} absolute md:relative top-full left-0 right-0 bg-blue-600 md:bg-transparent p-4 md:p-0 z-50 md:z-auto transition-all duration-300 ease-in-out`}>
               {navItems.slice(0, 5).map((item) => (
                 <li key={item.to} className="mb-2 md:mb-0">
-                  <Link to={item.to} className="hover:text-blue-200 block" onClick={() => setIsMenuOpen(false)}>{item.title}</Link>
+                  <Link 
+                    to={item.to} 
+                    className="hover:text-blue-200 block py-2 md:py-0" 
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
