@@ -7,6 +7,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -24,8 +25,14 @@ const Contact = () => {
     },
   });
 
-  function onSubmit(values) {
+  async function onSubmit(values) {
+    // Here you would typically send an API request to your backend
+    // For demonstration, we'll just log the values and show a success message
     console.log(values);
+    
+    // Simulate sending email
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     toast({
       title: "Message Sent",
       description: "Thank you for contacting us. We'll get back to you soon!",
@@ -34,7 +41,12 @@ const Contact = () => {
   }
 
   return (
-    <div className="space-y-8">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="space-y-8 max-w-2xl mx-auto"
+    >
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
       <p className="mb-4">Have a question or want to discuss a project? Get in touch with us using the form below.</p>
 
@@ -79,7 +91,7 @@ const Contact = () => {
               </FormItem>
             )}
           />
-          <Button type="submit">Send Message</Button>
+          <Button type="submit" className="w-full">Send Message</Button>
         </form>
       </Form>
 
@@ -90,7 +102,7 @@ const Contact = () => {
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Twitter</a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
