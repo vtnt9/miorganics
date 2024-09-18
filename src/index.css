@@ -74,3 +74,65 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Mobile-first responsive design */
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Improved button styles */
+button, .button {
+  @apply px-4 py-2 rounded transition-all duration-200 ease-in-out;
+}
+
+button:hover, .button:hover {
+  @apply transform scale-105;
+}
+
+/* Form styles */
+input, textarea {
+  @apply w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Image optimization */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold mb-2;
+}
+
+h1 { @apply text-3xl md:text-4xl; }
+h2 { @apply text-2xl md:text-3xl; }
+h3 { @apply text-xl md:text-2xl; }
+
+p { @apply mb-4; }
+
+/* Improved link styles */
+a {
+  @apply text-blue-600 hover:text-blue-800 transition-colors duration-200;
+}
+
+/* Container for consistent padding */
+.container {
+  @apply px-4 md:px-6 lg:px-8;
+}
