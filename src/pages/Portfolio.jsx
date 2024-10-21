@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Dialog } from '@/components/ui/dialog';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const projects = [
   {
@@ -27,29 +28,34 @@ const Portfolio = () => {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-3xl font-bold mb-4">Our Portfolio</h1>
-      <p className="mb-4">Explore some of our most impactful projects that showcase our expertise in custom software development.</p>
+      <h1 className="text-3xl font-bold mb-4 text-orange-500">Our Portfolio</h1>
+      <p className="mb-4 text-gray-300">Explore some of our most impactful projects that showcase our expertise in custom software development.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md cursor-pointer" onClick={() => setSelectedProject(project)}>
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover mb-4 rounded" />
-            <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-            <p>{project.description}</p>
-          </div>
+          <Card key={index} className="bg-dark-800 text-white cursor-pointer hover:bg-dark-700 transition-colors duration-200">
+            <CardHeader>
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover mb-4 rounded" />
+              <CardTitle className="text-orange-400">{project.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-300">{project.description}</p>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="mt-4 text-orange-400 hover:underline" onClick={() => setSelectedProject(project)}>Learn More</button>
+                </DialogTrigger>
+                <DialogContent className="bg-dark-800 text-white">
+                  <DialogHeader>
+                    <DialogTitle className="text-orange-400">{project.title}</DialogTitle>
+                  </DialogHeader>
+                  <img src={project.image} alt={project.title} className="w-full h-64 object-cover mb-4 rounded" />
+                  <p className="text-gray-300">{project.details}</p>
+                </DialogContent>
+              </Dialog>
+            </CardContent>
+          </Card>
         ))}
       </div>
-
-      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        {selectedProject && (
-          <div className="p-6">
-            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-64 object-cover mb-4 rounded" />
-            <p className="mb-4">{selectedProject.details}</p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded" onClick={() => setSelectedProject(null)}>Close</button>
-          </div>
-        )}
-      </Dialog>
     </div>
   );
 };
