@@ -28,28 +28,28 @@ const Portfolio = () => {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-3xl font-bold mb-4 text-orange-500">Our Portfolio</h1>
-      <p className="mb-4 text-gray-300">Explore some of our most impactful projects that showcase our expertise in custom software development.</p>
+      <h1 className="text-3xl font-bold mb-4 text-orange-600">Our Portfolio</h1>
+      <p className="mb-4 text-gray-800">Explore some of our most impactful projects that showcase our expertise in custom software development.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <Card key={index} className="bg-dark-800 text-white cursor-pointer hover:bg-dark-700 transition-colors duration-200">
+          <Card key={index} className="bg-white cursor-pointer hover:bg-gray-50 transition-colors duration-200">
             <CardHeader>
               <img src={project.image} alt={project.title} className="w-full h-48 object-cover mb-4 rounded" />
-              <CardTitle className="text-orange-400">{project.title}</CardTitle>
+              <CardTitle className="text-orange-600">{project.title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-300">{project.description}</p>
+              <p className="text-gray-700">{project.description}</p>
               <Dialog>
                 <DialogTrigger asChild>
-                  <button className="mt-4 text-orange-400 hover:underline" onClick={() => setSelectedProject(project)}>Learn More</button>
+                  <button className="mt-4 text-orange-600 hover:underline" onClick={() => setSelectedProject(project)}>Learn More</button>
                 </DialogTrigger>
-                <DialogContent className="bg-dark-800 text-white">
+                <DialogContent className="bg-white text-gray-800">
                   <DialogHeader>
-                    <DialogTitle className="text-orange-400">{project.title}</DialogTitle>
+                    <DialogTitle className="text-orange-600">{project.title}</DialogTitle>
                   </DialogHeader>
                   <img src={project.image} alt={project.title} className="w-full h-64 object-cover mb-4 rounded" />
-                  <p className="text-gray-300">{project.details}</p>
+                  <p className="text-gray-700">{project.details}</p>
                 </DialogContent>
               </Dialog>
             </CardContent>
