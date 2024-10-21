@@ -11,11 +11,11 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
+    <div className="min-h-screen flex flex-col bg-gray-100 text-gray-800">
       <header className="bg-gray-800 text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-orange-500">MiOrganics</Link>
+            <Link to="/" className="text-2xl font-bold text-orange-400">MiOrganics</Link>
             <div className="md:hidden">
               <button onClick={toggleMenu} className="focus:outline-none" aria-label="Toggle menu">
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
