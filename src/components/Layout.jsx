@@ -11,22 +11,22 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 text-gray-800">
-      <header className="bg-orange-600 text-white sticky top-0 z-50">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
+      <header className="bg-gray-800 text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold">MiOrganics</Link>
+            <Link to="/" className="text-2xl font-bold text-orange-500">MiOrganics</Link>
             <div className="md:hidden">
               <button onClick={toggleMenu} className="focus:outline-none" aria-label="Toggle menu">
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
-            <ul className={`md:flex md:space-x-4 ${isMenuOpen ? 'block' : 'hidden'} absolute md:relative top-full left-0 right-0 bg-orange-600 md:bg-transparent p-4 md:p-0 z-50 md:z-auto transition-all duration-300 ease-in-out`}>
+            <ul className={`md:flex md:space-x-6 ${isMenuOpen ? 'block' : 'hidden'} absolute md:relative top-full left-0 right-0 bg-gray-800 md:bg-transparent p-4 md:p-0 z-50 md:z-auto transition-all duration-300 ease-in-out`}>
               {navItems.slice(0, 5).map((item) => (
                 <li key={item.to} className="mb-2 md:mb-0">
                   <Link 
                     to={item.to} 
-                    className="hover:text-orange-200 block py-2 md:py-0" 
+                    className="hover:text-orange-400 block py-2 md:py-0 transition-colors duration-200" 
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.title}
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8 text-lg leading-relaxed">
         {children}
       </main>
 
@@ -49,14 +49,14 @@ const Layout = ({ children }) => {
             <ul className="flex flex-wrap justify-center space-x-4">
               {navItems.slice(5).map((item) => (
                 <li key={item.to}>
-                  <Link to={item.to} className="hover:text-orange-300">{item.title}</Link>
+                  <Link to={item.to} className="hover:text-orange-400 transition-colors duration-200">{item.title}</Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="mt-4 text-center">
-            <p>Contact: <a href="mailto:official@xpmaps.com" className="hover:underline">official@xpmaps.com</a></p>
-            <p>Support: <a href="mailto:support@xpmaps.com" className="hover:underline">support@xpmaps.com</a></p>
+            <p>Contact: <a href="mailto:official@xpmaps.com" className="hover:text-orange-400 transition-colors duration-200">official@xpmaps.com</a></p>
+            <p>Support: <a href="mailto:support@xpmaps.com" className="hover:text-orange-400 transition-colors duration-200">support@xpmaps.com</a></p>
           </div>
         </div>
       </footer>
