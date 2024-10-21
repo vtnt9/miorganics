@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-dark-900 text-white">
+    <div className="min-h-screen flex flex-col bg-gray-100 text-gray-800">
       <header className="bg-orange-600 text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
-      <footer className="bg-dark-800 text-white">
+      <footer className="bg-gray-800 text-white">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="mb-4 md:mb-0">&copy; 2024 MiOrganics. All rights reserved.</p>
@@ -55,8 +55,8 @@ const Layout = ({ children }) => {
             </ul>
           </div>
           <div className="mt-4 text-center">
-            <p>Contact: <a href="mailto:official@miorganics.com" className="hover:underline">official@miorganics.com</a></p>
-            <p>Support: <a href="mailto:support@miorganics.com" className="hover:underline">support@miorganics.com</a></p>
+            <p>Contact: <a href="mailto:official@xpmaps.com" className="hover:underline">official@xpmaps.com</a></p>
+            <p>Support: <a href="mailto:support@xpmaps.com" className="hover:underline">support@xpmaps.com</a></p>
           </div>
         </div>
       </footer>
