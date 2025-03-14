@@ -8,3 +8,18 @@
   to = "/index.html"
   status = 200
   force = true
+
+# Explicitly set the publish directory
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Set cache control for assets
+[[headers]]
+  for = "/*"
+    [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"
+
+# Set environment production context
+[context.production.environment]
+  NODE_ENV = "production"
