@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -101,7 +102,7 @@ const Contact = () => {
           <CardContent className="space-y-4">
             <div className="flex items-center space-x-2">
               <Mail className="text-orange-600" />
-              <p className="text-gray-700">official@xpmaps.com</p>
+              <p className="text-gray-700">official@miorganics.com</p>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="text-orange-600" />

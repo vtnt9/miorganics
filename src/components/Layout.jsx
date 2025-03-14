@@ -56,8 +56,8 @@ const Layout = ({ children }) => {
             </ul>
           </div>
           <div className="mt-4 text-center">
-            <p>Contact: <a href="mailto:official@xpmaps.com" className="hover:text-orange-400 transition-colors duration-200">official@xpmaps.com</a></p>
-            <p>Support: <a href="mailto:support@xpmaps.com" className="hover:text-orange-400 transition-colors duration-200">support@xpmaps.com</a></p>
+            <p>Contact: <a href="mailto:official@miorganics.com" className="hover:text-orange-400 transition-colors duration-200">official@miorganics.com</a></p>
+            <p>Support: <a href="mailto:support@miorganics.com" className="hover:text-orange-400 transition-colors duration-200">support@miorganics.com</a></p>
           </div>
         </div>
       </footer>
