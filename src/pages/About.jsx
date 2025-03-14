@@ -1,11 +1,6 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const teamMembers = [
-  { name: 'John Doe', role: 'CEO & Founder', bio: 'John has over 20 years of experience in software development and business management.' },
-  { name: 'Jane Smith', role: 'CTO', bio: 'Jane is a tech visionary with a passion for creating innovative software solutions.' },
-  { name: 'Mike Johnson', role: 'Lead Developer', bio: 'Mike is an expert in full-stack development and has led numerous successful projects.' },
-];
 
 const About = () => {
   return (
@@ -24,23 +19,6 @@ const About = () => {
           <li>Collaboration: We work closely with our clients to ensure their vision is realized in every project.</li>
           <li>Integrity: We maintain the highest standards of professionalism and ethical conduct.</li>
         </ul>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4 text-orange-600">Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="bg-white shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-orange-600">{member.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-2">{member.role}</p>
-                <p className="text-gray-800">{member.bio}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </section>
     </div>
   );
