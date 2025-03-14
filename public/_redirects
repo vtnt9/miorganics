@@ -1,2 +1,4 @@
 
+# Single Page App (SPA) redirect rule for client-side routing
+# This ensures all routes are handled by index.html with a 200 status
 /* /index.html 200

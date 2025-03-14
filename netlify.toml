@@ -1,5 +1,10 @@
 
+# Netlify configuration file
+
+# SPA redirect rule for client-side routing
+# This ensures that all routes are handled by index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
