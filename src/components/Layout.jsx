@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { navItems } from '../nav-items';
@@ -45,7 +46,7 @@ const Layout = ({ children }) => {
       <footer className="bg-gray-800 text-white">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="mb-4 md:mb-0">&copy; 2024 MiOrganics. All rights reserved.</p>
+            <p className="mb-4 md:mb-0">&copy; 2025 MiOrganics. All rights reserved.</p>
             <ul className="flex flex-wrap justify-center space-x-4">
               {navItems.slice(5).map((item) => (
                 <li key={item.to}>
